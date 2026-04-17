@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fog-Enabled Smart Environment Monitoring</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div>
+        <h1>🌫️ Fog-Enabled Smart Environment Monitoring</h1>
+        <p class="subtitle">Real-time data from fog nodes • Updated every 5 seconds</p>
+      </div>
+      <div class="status">
+        <span id="status-dot" class="dot"></span>
+        <span id="status-text">Connecting…</span>
+        <span id="last-refresh">—</span>
+      </div>
+    </header>
+
+    <!-- Alerts Banner -->
+    <div id="alert-banner" class="alert-banner"></div>
+
+    <!-- KPI Cards -->
+    <section class="kpi-grid" id="kpi-grid">
+      <!-- dynamically injected -->
+    </section>
+
+    <!-- Charts -->
+    <section class="chart-grid" id="chart-grid">
+      <!-- dynamically injected -->
+    </section>
+
+    <div class="controls">
+      <button class="btn primary" onclick="manualRefresh()">🔄 Manual Refresh</button>
+      <button class="btn success" onclick="exportToCSV()">📥 Export to CSV</button>
+    </div>
+
+    <!-- Latest Readings Table -->
+    <section class="table-section">
+      <h2>Latest Readings</h2>
+      <div class="table-wrap">
+        <table id="readings-table">
+          <thead>
+            <tr>
+              <th>Timestamp</th>
+              <th>Sensor</th>
+              <th>Value</th>
+              <th>Unit</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
